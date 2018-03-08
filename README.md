@@ -1,6 +1,5 @@
 # .dotfiles
-Current config on macOS: vscode, zsh, ohmyzsh with spaceship
-Instructions for personal reference
+Current config on macOS: vscode, zsh, ohmyzsh with spaceship. Instructions for personal reference.
 
 ## VSCode
 - Download and install [vscode](https://code.visualstudio.com/): `sudo dpkg -i <installfile>.deb; sudo apt-get install -f` on Debian-based distros, download and double-click on macOS;
