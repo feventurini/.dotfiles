@@ -1,9 +1,16 @@
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# use miniconda2 as main python package manager
 export PATH="$HOME/lib/miniconda2/bin:$PATH"
+
+# ~/dev folder where are the projects are, adding to the pythonpath for "import project"
+# without manually adding the folder in the code/command line
 export PYTHONPATH="$HOME/dev/:$PYTHONPATH"
+
+# luigi client config
 export LUIGI_CONFIG_PATH="$HOME/.luigiconf"
+
 export DEFAULT_USER=`whoami`
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -26,6 +33,8 @@ plugins=(git mercurial osx web-search zsh-autosuggestions zsh-completions zsh-sy
 source $ZSH/oh-my-zsh.sh
 
 # Shortcut for mounting the dev box unless mounted, also called at login
+# needs the proper alias/proxy command configured in ~/.ssh/config
+# change names of folder/remote server as needed
 export DEVBOX_VOLUME_PATH="$HOME/Devbox"
 export DEVBOX_SSH_ALIAS="fededev"
 
@@ -67,9 +76,12 @@ activate() { source activate "$1"; }
 deactivate() { source deactivate "$1"; }
 
 # aliases I like
+# rapid edit of zsh config files
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
+# rsync source target, .py files only
 alias rsync_pyonly='rsync -zarv --include="*/" --include="*.py" --exclude="*"'
+# config files
 alias sshconfig="code ~/.ssh/config"
 
 # C client for mercurial, marginally faster
