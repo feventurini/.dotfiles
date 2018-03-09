@@ -14,3 +14,7 @@ Current config on macOS: vscode, zsh, ohmyzsh with spaceship. Instructions for p
 - Copy the .zshrc file in your home folder (or wherever zsh will be pointing at), and edit if needed
 - (optional) make zsh the default shell `chsh -s $(which zsh)` (add `sudo` for root)
 - restart terminal or `source ~/.zshrc`
+
+## Screenshots
+![zsh screenshot](imgs/zsh.png?raw=true "zsh")
+![vscode screenshot](imgs/vscode.png?raw=true "code")
