@@ -84,6 +84,9 @@ alias rsync_pyonly='rsync -zarv --include="*/" --include="*.py" --exclude="*"'
 # config files
 alias sshconfig="code ~/.ssh/config"
 
+alias synctodev="rsync_pyonly ~/dev/telecticcrawler fededev:~/dev/"
+alias syncfromdev="rsync_pyonly fededev:~/dev/telecticcrawler ~/dev/ "
+
 # C client for mercurial, marginally faster
 alias hg=chg
 
