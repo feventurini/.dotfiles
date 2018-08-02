@@ -27,7 +27,9 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 ZSH_THEME="spaceship"
-COMPLETION_WAITING_DOTS=false
+
+
+export COMPLETION_WAITING_DOTS=false
 
 plugins=(git mercurial osx web-search zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
@@ -46,7 +48,16 @@ mountdevbox() {
   else
     mkdir -p $DEVBOX_VOLUME_PATH
     volname=${DEVBOX_VOLUME_PATH##*/}
-    sshfs $DEVBOX_SSH_ALIAS: -o volname=$volname $DEVBOX_VOLUME_PATH
+    case `uname` in
+      Darwin)
+      # osx
+      sshfs $DEVBOX_SSH_ALIAS: -o volname=$volname $DEVBOX_VOLUME_PATH
+      ;;
+      Linux)
+      # linux
+      sshfs $DEVBOX_SSH_ALIAS: $DEVBOX_VOLUME_PATH
+      ;;  
+    esac
   fi
   } || {
   # catch
@@ -62,9 +73,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 # better autosuggest
 export ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
 bindkey '^ ' autosuggest-accept
+
 # Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
-
 
 # https://github.com/arzzen/calc.plugin.zsh/blob/master/calc.plugin.zsh
 autoload -U zcalc
