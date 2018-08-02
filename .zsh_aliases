@@ -1,0 +1,47 @@
+# Wrapper for source activate, works with conda. I don't want to type "source"
+activate() { source activate "$1"; }
+deactivate() { source deactivate "$1"; }
+
+function pingport(){
+    curl -s "$1:$2" > /dev/null && echo "Success connecting to $1 on port $2." || echo "Failed to connect to $1 on port $2."
+}
+# aliases I like
+# rapid edit of zsh config files
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
+alias zshaliases="code ~/.zsh_aliases"
+# rsync source target, .py files only
+alias rsync_pyonly='rsync -zar --include="*/" --include="*.py" --exclude="*"'
+# config files
+alias sshconfig="code ~/.ssh/config"
+
+alias synctoweb='rsync -zar -P ~/dev/telecticweb fede.glass.gateway:/usr/share/nginx/www/fede.glass.ai/'
+alias synctodev='rsync -zar -P ~/dev/ fede.glass.dev:~/dev/'
+alias syncfromdev='rsync -zar -P fede.glassdev.:~/dev/ ~/dev/'
+alias synccrawler='rsync -zar --no-perms -P ~/dev/telecticcrawler fede.glass.crawler:/opt/'
+alias syncfromcrawler='rsync -zar --no-perms -P fede.glass.-crawler:/opt/telecticcrawler ~/dev/'
+# C client for mercurial, marginally faster
+alias hg=chg
+
+# MAKE SURE I DONT FUCK UP
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# CANT BE BOTHERED TO TYPE THE VOWELS
+alias clr='clear'
+
+# FOR ALIAS TO BE SUDO-ed
+alias sudo='sudo '
+
+# Download file with original filename
+alias get="curl -O -L"
+
+# Faster cd to common 
+alias dl='cd ~/Downloads'
+alias dt='cd ~/Desktop'
+
+# macOS specific commands, comment if linux
+alias showHiddenFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
