@@ -1,1 +1,53 @@
-/Users/fede/Library/Application Support/Code/User/settings.json
+{
+    "workbench.startupEditor": "welcomePage",
+
+    "workbench.colorTheme": "Brogrammer",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+        "sideBar.background": "#1a1a1a",
+        "activityBar.background": "#1a1a1a",
+        "editor.selectionBackground": "#e74a3c8e"
+    },
+
+    "window.zoomLevel": -0.75,
+
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "workbench.fontAliasing": "auto",
+    "editor.fontSize": 13,
+
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.folders.color": "#e67e22",
+
+    "clock.dateFormat": "HH:MM ddd dd.mm",
+
+    "python.venvPath": "~/lib/miniconda2/envs",
+    "python.formatting.provider": "yapf",
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=numpy", 
+        "--errors-only"        
+    ],    
+
+    "files.exclude": {
+        "**/.vscode": true,
+        "**/*.pyc": true
+    },
+
+    "remote.port": 52698,
+    "remote.onstartup": true,
+    "remote.host": "127.0.0.1",
+
+    "hg.pushPullScope": "current",    
+
+    "csv-preview.separator": "\t",
+
+    "remote.dontShowPortAlreadyInUseError": true,
+    
+    "spotify.showInitializationError": true,
+    "spotify.showToggleShufflingButton": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    }
+}
